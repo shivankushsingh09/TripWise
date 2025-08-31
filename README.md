@@ -30,19 +30,19 @@
 
 ### Average Speed Calculator
 
-![Average Speed Calculator](assets/img/average-speed.png)
+![Average Speed Calculator](assets/img/average-speed-calculator.png)
 
 ### ETA Calculator
 
-![ETA Calculator](assets/img/eta.png)
+![ETA Calculator](assets/img/eta-calculator.png)
 
 ### Fuel Cost Calculator
 
-![Fuel Cost Calculator](assets/img/fuel.png)
+![Fuel Cost Calculator](assets/img/fuel-cost-calculator.png)
 
 ### Itinerary Cost Estimator
 
-![Itinerary Cost Estimator](assets/img/itinerary.png)
+![Itinerary Cost Estimator](assets/img/itinerary-cost-calculator.png)
 
 ---
 
