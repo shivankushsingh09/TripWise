@@ -26,21 +26,23 @@
 
 ### Home Page
 
-<img src="https://user-images.githubusercontent.com/placeholder/tripwise-home.png" alt="TripWise Home" width="700"/>
+![TripWise Overview](assets/img/tripwise-overview.png)
 
 ### Average Speed Calculator
 
-<img src="https://user-images.githubusercontent.com/placeholder/tripwise-speed.png" alt="Average Speed Calculator" width="700"/>
+![Average Speed Calculator](assets/img/average-speed.png)
 
 ### ETA Calculator
 
-<img src="https://user-images.githubusercontent.com/placeholder/tripwise-eta.png" alt="ETA Calculator" width="700"/>
+![ETA Calculator](assets/img/eta.png)
 
 ### Fuel Cost Calculator
 
-<img src="https://user-images.githubusercontent.com/placeholder/tripwise-fuel.png" alt="Fuel Cost Calculator" width="700"/>
+![Fuel Cost Calculator](assets/img/fuel.png)
 
-_(Replace with your real image URLs or use the demo screenshots above.)_
+### Itinerary Cost Estimator
+
+![Itinerary Cost Estimator](assets/img/itinerary.png)
 
 ---
 
