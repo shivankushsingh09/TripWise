@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Calculate spedd by dividing total distance by travel time." />
+    <title>Average Speed Calculater</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="container">
+        <nav class="nav-flex">
+            <ul class="left-nav">
+                <li><a href="/index.html">TripWise Tools</a></li>
+            </ul>
+            <ul class="right-nav">
+                <li><a href="/assets/pages/average-speed.html">Average Speed</a></li>
+                <li><a href="/assets/pages/eta.html">ETA</a></li>
+                <li><a href="/assets/pages/fuel.html">Fuel Cost</a></li>
+                <li><a href="/assets/pages/itinerary.html">Itinerary Cost</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section>
+            <h1>Average Speed Calculater</h1>
+            <fieldset>
+                <label for="distance">Distance(km):</label>
+                <input type="number" id="distance" required />
+                <label for="time">Time(hours):</label>
+                <input type="number" id="time" required />
+                <input type="submit" id="CalculateSpeedBtn" value="Calculate Speed" />
+            </fieldset>
+            <p id="app"></p>
+        </section>
+    </main>
+
+    <script>
+        function calculateAverageSpeed() {
+            const distanceElement = document.getElementById("distance");
+            const timeElement = document.getElementById("time");
+            const appElement = document.getElementById("app");
+
+            const distanceValue = distanceElement.value.trim();
+            const timeValue = timeElement.value.trim();
+
+            if (distanceValue === "") {
+                appElement.innerText = "Distance is required.";
+                return;
+            }
+
+            if (timeValue === "") {
+                appElement.innerText = "Time is required.";
+                return;
+            }
+
+            const distance = parseFloat(distanceValue);
+            const time = parseFloat(timeValue);
+
+            if (isNaN(distance)) {
+                appElement.innerText = "Please enter a valid number for distance.";
+                return;
+            }
+
+            if (isNaN(time)) {
+                appElement.innerText = "Please enter a valid number for time.";
+                return;
+            }
+
+            if (distance <= 0) {
+                appElement.innerText = "Distance must be greater than 0.";
+                return;
+            }
+
+            if (time <= 0) {
+                appElement.innerText = "Time must be greater than 0.";
+                return;
+            }
+
+            const speed = distance / time;
+            appElement.innerText = "Average Speed: " + speed.toFixed(2) + " km/h";
+        }
+
+        const buttonElement = document.getElementById("CalculateSpeedBtn");
+        buttonElement.addEventListener("click", calculateAverageSpeed);
+    </script>
+</body>
+
+</html>

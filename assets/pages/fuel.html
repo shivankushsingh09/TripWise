@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Calculate total fuel expense based on distance and fuel price." />
+    <title>Fuel Cost Calculater</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="container">
+        <nav class="nav-flex">
+            <ul class="left-nav">
+                <li><a href="/index.html">TripWise Tools</a></li>
+            </ul>
+            <ul class="right-nav">
+                <li><a href="/assets/pages/average-speed.html">Average Speed</a></li>
+                <li><a href="/assets/pages/eta.html">ETA</a></li>
+                <li><a href="/assets/pages/fuel.html">Fuel Cost</a></li>
+                <li><a href="/assets/pages/itinerary.html">Itinerary Cost</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section>
+            <h1>Fuel Cost Calculater</h1>
+            <fieldset>
+                <label for="distance">Distance(km):</label>
+                <input type="number" id="distance" required />
+
+                <label for="fuel efficiency">Fuel Efficiency (km/l):</label>
+                <input type="number" id="fuelEfficiency" required />
+
+                <label for="fuel price">Fuel Price (per litre):</label>
+                <input type="number" id="fuelPrice" required />
+
+                <input type="submit" id="calculateCostBtn" value="Calculate Cost" />
+            </fieldset>
+            <p id="app"></p>
+        </section>
+    </main>
+    <script>
+        //   < !--Optional Conditionals-- >
+        function getEfficiency(fuelEfficiency) {
+            if (fuelEfficiency <= 10) return "Poor fuel efficiency."; if (fuelEfficiency >= 20 && fuelEfficiency <= 30)
+                return "Average fuel efficiency."; if (fuelEfficiency > 30) return "Good fuel efficiency.";
+        }
+
+        function calculateCost() {
+            const distanceElement = document.getElementById("distance");
+            const fuelEfficiencyElement = document.getElementById("fuelEfficiency");
+            const fuelPriceElement = document.getElementById("fuelPrice");
+            const appElement = document.getElementById("app");
+
+            const distance = parseFloat(distanceElement.value);
+            const fuelEfficiency = parseFloat(fuelEfficiencyElement.value);
+            const fuelPrice = parseFloat(fuelPriceElement.value);
+
+            if (isNaN(distance) || distance <= 0) {
+                appElement.innerText = "Distance must be a number greater than 0.";
+                return;
+            } if (isNaN(fuelEfficiency) || fuelEfficiency <= 0) {
+                appElement.innerText = "Fuel efficiency must be a number greater than 0."; return;
+            } if (isNaN(fuelPrice)
+                || fuelPrice <= 0) { appElement.innerText = "Fuel price must be a number greater than 0."; return; } const
+                    fuelNeeded = distance / fuelEfficiency; const TotalCost = fuelNeeded * fuelPrice; const
+                        efficiency = getEfficiency(fuelEfficiency); appElement.innerText = "Total Fuel Cost: ₹" +
+                            TotalCost.toFixed(2) + " - " + efficiency;
+        } const
+            buttonElement = document.getElementById("calculateCostBtn"); buttonElement.addEventListener("click",
+                calculateCost); </script>
+</body>
+
+</html>
