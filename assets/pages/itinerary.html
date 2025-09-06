@@ -8,7 +8,7 @@
     <meta name="description" content="Get a total cost of your trip by summing multiple expenses." />
     <title>Itinerary Cost Estimator</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/TripWise/assets/css/main.css" />
 </head>
 
 <body>
@@ -18,10 +18,10 @@
                 <li><a href="/index.html">TripWise Tools</a></li>
             </ul>
             <ul class="right-nav">
-                <li><a href="/assets/pages/average-speed.html">Average Speed</a></li>
-                <li><a href="/assets/pages/eta.html">ETA</a></li>
-                <li><a href="/assets/pages/fuel.html">Fuel Cost</a></li>
-                <li><a href="/assets/pages/itinerary.html">Itinerary Cost</a></li>
+                <li><a href="/TripWise/assets/pages/average-speed.html">Average Speed</a></li>
+                <li><a href="/TripWise/assets/pages/eta.html">ETA</a></li>
+                <li><a href="/TripWise/assets/pages/fuel.html">Fuel Cost</a></li>
+                <li><a href="/TripWise/assets/pages/itinerary.html">Itinerary Cost</a></li>
             </ul>
         </nav>
     </header>
@@ -51,56 +51,7 @@
         </section>
     </main>
 
-    <script>
-        function getHotelCost(hotelType) {
-            if (hotelType === "budget") return 1000;
-            if (hotelType === "standard") return 2500;
-            if (hotelType === "luxury") return 3000;
-            return 0;
-        }
-
-        function calculateTotal() {
-            const transpoartCostElement = document.getElementById("transpoartCost");
-            const hotelTypeElement = document.getElementById("hotelType");
-            const foodCostElement = document.getElementById("foodCost");
-            const activitiesCostElement = document.getElementById("activitiesCost");
-            const appElement = document.getElementById("app");
-
-            const transpoartCost = parseFloat(transpoartCostElement.value);
-            const foodCost = parseFloat(foodCostElement.value);
-            const activitiesCost = parseFloat(activitiesCostElement.value);
-            const hotelType = hotelTypeElement.value;
-
-            if (transpoartCost <= 0) {
-                appElement.innerText = "Enter a valid Transpoart Cost.";
-                return;
-            }
-
-            if (foodCost <= 0) {
-                appElement.innerText = "Enter a valid Food Cost.";
-                return;
-            }
-
-            if (activitiesCost <= 0) {
-                appElement.innerText = "Enter a valid Activities Cost.";
-                return;
-            }
-
-            const hotelCost = getHotelCost(hotelType);
-            const totalCost =
-                transpoartCost + hotelCost + foodCost + activitiesCost;
-
-            appElement.innerText =
-                "Total Trip Cost: ₹" +
-                totalCost.toFixed(2) +
-                " (Hotel cost: ₹" +
-                hotelCost +
-                ")";
-        }
-
-        const buttonElement = document.getElementById("calculateTotalBtn");
-        buttonElement.addEventListener("click", calculateTotal);
-    </script>
+    <script src="/TripWise/assets/js/itinerary.js"></script>
 </body>
 
 </html>

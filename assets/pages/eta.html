@@ -8,7 +8,7 @@
     <meta name="description" content="Estimate your arrival time based on speed and distance." />
     <title>ETA Calculater</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/TripWise/assets/css/main.css" />
 </head>
 
 <body>
@@ -18,10 +18,10 @@
                 <li><a href="/index.html">TripWise Tools</a></li>
             </ul>
             <ul class="right-nav">
-                <li><a href="/assets/pages/average-speed.html">Average Speed</a></li>
-                <li><a href="/assets/pages/eta.html">ETA</a></li>
-                <li><a href="/assets/pages/fuel.html">Fuel Cost</a></li>
-                <li><a href="/assets/pages/itinerary.html">Itinerary Cost</a></li>
+                <li><a href="/TripWise/assets/pages/average-speed.html">Average Speed</a></li>
+                <li><a href="/TripWise/assets/pages/eta.html">ETA</a></li>
+                <li><a href="/TripWise/assets/pages/fuel.html">Fuel Cost</a></li>
+                <li><a href="/TripWise/assets/pages/itinerary.html">Itinerary Cost</a></li>
             </ul>
         </nav>
     </header>
@@ -39,55 +39,7 @@
         </section>
     </main>
 
-    <script>
-        function calculateETA() {
-            const distanceElement = document.getElementById("distance");
-            const speedElement = document.getElementById("speed");
-            const appElement = document.getElementById("app");
-            const distanceValue = distanceElement.value.trim();
-            const speedValue = speedElement.value.trim();
-
-            if (distanceValue === "") {
-                appElement.innerText = "Distance is required.";
-                return;
-            }
-
-            if (speedValue === "") {
-                appElement.innerText = "Speed is required.";
-                return;
-            }
-
-            const distance = parseFloat(distanceValue);
-            const speed = parseFloat(speedValue);
-
-            if (isNaN(distance)) {
-                appElement.innerText = "Please enter a valid number for distance.";
-                return;
-            }
-
-            if (isNaN(speed)) {
-                appElement.innerText = "Please enter a valid number for speed.";
-                return;
-            }
-
-            if (distance <= 0) {
-                appElement.innerText = "Distance must be greater than 0.";
-                return;
-            }
-
-            if (speed <= 0) {
-                appElement.innerText = "Speed must be greater than 0.";
-                return;
-            }
-
-            const ETA = distance / speed;
-            appElement.innerText =
-                "Estimated Time of Arrival: " + ETA.toFixed(2) + " hours";
-        }
-
-        const buttonElement = document.getElementById("calculateETABtn");
-        buttonElement.addEventListener("click", calculateETA);
-    </script>
+    <script src="/TripWise/assets/js/eta.js"></script>
 </body>
 
 </html>
