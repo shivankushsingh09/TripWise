@@ -62,16 +62,25 @@ Or just use the [Live Demo](https://tripwise-v1.netlify.app/).
 ## 📦 Project Structure
 
 ```
-tripwise/
+TripWise/
 │
-├── index.html                # Home page with links to all calculators
-├── average-speed.html        # Average Speed Calculator
-├── eta.html                  # ETA Calculator
-├── fuel.html                 # Fuel Cost Calculator
-├── itinerary.html            # Itinerary Cost Estimator
+├── index.html                  # Home page with links to all calculators
 ├── assets/
-│   └── css/main.css          # Custom styles
-└── README.md                 # Project overview
+│   ├── css/
+│   │   └── main.css            # Custom styles
+│   ├── img/
+│   │   └── ...                 # Images used in the project
+│   ├── js/
+│   │   ├── average-speed.js    # JS for Average Speed Calculator
+│   │   ├── eta.js              # JS for ETA Calculator
+│   │   ├── fuel.js             # JS for Fuel Cost Calculator
+│   │   └── itinerary.js        # JS for Itinerary Cost Estimator
+│   └── pages/
+│       ├── average-speed.html  # Average Speed Calculator
+│       ├── eta.html            # ETA Calculator
+│       ├── fuel.html           # Fuel Cost Calculator
+│       └── itinerary.html      # Itinerary Cost Estimator
+└── README.md                   # Project overview
 ```
 
 ---
