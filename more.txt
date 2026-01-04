@@ -1,0 +1,3 @@
+TripWise is a simple, all-in-one travel calculator toolkit designed to make trip planning effortless. Calculate your average speed, ETA, fuel costs, and total itinerary expenses using clean, intuitive web tools.
+
+https://tripwise-v1.netlify.app/
