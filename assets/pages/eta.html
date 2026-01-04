@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Estimate your arrival time based on speed and distance." />
+    <title>ETA Calculater</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+
+<body>
+    <header class="container">
+        <nav class="nav-flex">
+            <ul class="left-nav">
+                <li><a href="/index.html">TripWise Tools</a></li>
+            </ul>
+            <ul class="right-nav">
+                <li><a href="/assets/pages/average-speed.html">Average Speed</a></li>
+                <li><a href="/assets/pages/eta.html">ETA</a></li>
+                <li><a href="/assets/pages/fuel.html">Fuel Cost</a></li>
+                <li><a href="/assets/pages/itinerary.html">Itinerary Cost</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section>
+            <h1>ETA Calculater</h1>
+            <fieldset>
+                <label for="distance">Distance(km):</label>
+                <input type="number" id="distance" required />
+                <label for="speed">Speed(km/hours):</label>
+                <input type="number" id="speed" required />
+                <input type="submit" id="calculateETABtn" value="Calculate ETA" />
+            </fieldset>
+            <p id="app"></p>
+        </section>
+    </main>
+
+    <script src="/assets/js/eta.js"></script>
+</body>
+
+</html>

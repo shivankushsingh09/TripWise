@@ -1,0 +1,64 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header CSS */
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-flex ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-flex li {
+  margin-left: 1rem;
+}
+
+.left-nav li {
+  margin-left: 0;
+}
+
+/*  */
+
+/* Card CSS */
+
+.tool-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.card-content h5 {
+  margin-top: 0;
+}
+
+.card-content a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+/*  */
+
+main {
+  flex: 1;
+}
+
+.neog-footer {
+  text-align: left;
+  color: var(--muted, #666);
+}
